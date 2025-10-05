@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Resume Screener</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>AI Resume Screener</h1>
+
+  <section>
+    <label for="keywordInput">Enter Keywords:</label>
+    <input type="text" id="keywordInput" placeholder="e.g., JavaScript, Python" />
+    <button id="addKeywordBtn">Add</button>
+    <button id="clearKeywords">Clear All</button>
+    <div id="keywordTags" class="keyword-tags"></div>
+  </section>
+
+  <section>
+    <div id="uploadArea" class="upload-area">
+      <div class="upload-icon">📁</div>
+      <h3>Click or drag & drop files here</h3>
+      <p>Supports: PDF, TXT (and DOCX if installed)</p>
+      <input type="file" id="fileInput" class="file-input" multiple accept=".pdf,.txt,.docx" />
+    </div>
+    <div id="processing" class="processing" style="display:none;">
+      <div class="spinner"></div>
+      <p>Processing resumes...</p>
+    </div>
+  </section>
+
+  <section class="stats" id="stats" style="display:none;">
+    <div>Total Resumes: <span id="totalResumes">0</span></div>
+    <div>Average Score: <span id="avgScore">0%</span></div>
+    <div>High Matches: <span id="topMatches">0</span></div>
+  </section>
+
+  <section>
+    <h2>Results</h2>
+    <div id="resultsContainer">
+      <div class="no-results">Upload resumes and set keywords to see results</div>
+    </div>
+  </section>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
